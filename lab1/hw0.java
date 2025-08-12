@@ -20,10 +20,31 @@ public class hw0 {
         return max_v;
     }
 
+    public static void windowPosSum(int[] a, int n) {
+        int l = a.length;
+        for(int i=0; i<l; i++){
+            if(a[i] > 0){
+                int sum = a[i];
+                for(int j=1; j<=n && (i+j) < l; j++){
+                    sum += a[i+j];
+                }
+                a[i] = sum;
+            }
+        }
+        
+    }
+
     public static void main(String[]args){
         drawTriangle(5);
         int[] numbers = new int[]{9, 2, 15, 2, 22, 10, 6};      
         System.out.println(max(numbers));
+        
+        int[] a = {1, 2, -3, 4, 5, 4};
+        int n = 3;
+        windowPosSum(a, n);
+
+        // Should print 4, 8, -3, 13, 9, 4
+        System.out.println(java.util.Arrays.toString(a));
 
     }
 }
