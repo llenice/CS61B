@@ -3,21 +3,22 @@ package IntList;
 public class IntListExercises {
 
     /**
-     * Part A: (Buggy) mutative method that adds a constant C to each
+     * Part A: mutative method that adds a constant C to each
      * element of an IntList
      *
      * @param lst IntList from Lecture
      */
     public static void addConstant(IntList lst, int c) {
         IntList head = lst;
-        while (head.rest != null) {
+        while (head != null) {
             head.first += c;
             head = head.rest;
         }
+
     }
 
     /**
-     * Part B: Buggy method that sets node.first to zero if
+     * Part B: method that sets node.first to zero if
      * the max value in the list starting at node has the same
      * first and last digit, for every node in L
      *
@@ -51,7 +52,7 @@ public class IntListExercises {
      */
     public static boolean firstDigitEqualsLastDigit(int x) {
         int lastDigit = x % 10;
-        while (x > 10) {
+        while (x >= 10) {
             x = x / 10;
         }
         int firstDigit = x % 10;
@@ -77,6 +78,22 @@ public class IntListExercises {
             lst.first *= lst.first;
         }
 
-        return currElemIsPrime || squarePrimes(lst.rest);
+        squarePrimes(lst.rest);
+
+        return currElemIsPrime ;
     }
+
+    // public static void main(String[]args){
+    //     IntList lst = IntList.of(1, 2, 3, 4, 5);
+    //     IntListExercises.addConstant(lst, 1);
+    //     System.out.println(lst.toString());
+    //     IntList L = IntList.of(5, 535, 35, 11, 10, 0);
+    //     IntListExercises.setToZeroIfMaxFEL(L);
+    //     System.out.println(L.toString());
+
+    //     IntList lst0 = IntList.of(17, 17, 3);
+    //     boolean changed =IntListExercises.squarePrimes(lst0);
+    //     System.out.println(changed);
+    //     System.out.println(lst0);
+    // }
 }
