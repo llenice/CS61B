@@ -78,9 +78,9 @@ public class IntListExercises {
             lst.first *= lst.first;
         }
 
-        squarePrimes(lst.rest);
+        boolean restChanged = squarePrimes(lst.rest);
 
-        return currElemIsPrime ;
+        return currElemIsPrime || restChanged;
     }
 
     // public static void main(String[]args){
