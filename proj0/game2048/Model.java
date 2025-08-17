@@ -1,11 +1,12 @@
 package game2048;
 
 import java.util.Formatter;
+import java.util.List;
 import java.util.Observable;
 
 
 /** The state of a game of 2048.
- *  @author TODO: YOUR NAME HERE
+ *  @author hjh
  */
 public class Model extends Observable {
     /** Current contents of the board. */
@@ -137,7 +138,13 @@ public class Model extends Observable {
      *  Empty spaces are stored as null.
      * */
     public static boolean emptySpaceExists(Board b) {
-        // TODO: Fill in this function.
+        for(int i = 0; i<b.size(); i++){
+            for(int j = 0; j < b.size(); j++){
+                if(b.tile(i, j) == null){
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
@@ -147,7 +154,15 @@ public class Model extends Observable {
      * given a Tile object t, we get its value with t.value().
      */
     public static boolean maxTileExists(Board b) {
-        // TODO: Fill in this function.
+        for(int i = 0; i<b.size(); i++){
+            for(int j = 0; j < b.size(); j++){
+                Tile t = b.tile(i, j);
+                if( t!= null && t.value() == MAX_PIECE ){
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 
@@ -158,7 +173,28 @@ public class Model extends Observable {
      * 2. There are two adjacent tiles with the same value.
      */
     public static boolean atLeastOneMoveExists(Board b) {
-        // TODO: Fill in this function.
+        if(emptySpaceExists(b)) return true;
+        int l = b.size();
+
+        for(int i = 0; i<l; i++){
+            for(int j = 0; j < l; j++){
+                Tile t = b.tile(i, j);
+
+                if(t == null) continue;
+                // 只需检查right和down
+                if(i+1 < l){
+                    Tile right = b.tile(i+1, j);
+                    if(t.value() == right.value()) return true;
+                }
+
+                if(j+1 < l){
+                    Tile down = b.tile(i, j+1);
+                    if(t.value() == down.value()) return true;
+                }
+
+            }
+        }      
+
         return false;
     }
 
