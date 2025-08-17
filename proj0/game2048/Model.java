@@ -114,7 +114,42 @@ public class Model extends Observable {
         // TODO: Modify this.board (and perhaps this.score) to account
         // for the tilt to the Side SIDE. If the board changed, set the
         // changed local variable to true.
+        board.setViewingPerspective(side);
+        int size = board.size();
 
+        for(int col = 0; col < size ; col++){
+            boolean[] mergedRow = new boolean[size]; // 该列本次倾斜哪些行已经完成过合并
+            for(int row = size - 2 ; row >= 0 ; row--){
+                
+                Tile tile = board.tile(col, row);
+                if(tile == null) continue;
+
+                int moveTo = row;
+                while(moveTo + 1 < size && board.tile(col, moveTo + 1) == null){
+                    moveTo++;
+                }
+
+                if(moveTo + 1 < size){
+                    Tile above = board.tile(col, moveTo + 1);
+                    if(above.value() == tile.value() && above.next() == above
+                        && !mergedRow[moveTo + 1]){
+                        moveTo ++;
+                    }
+                }
+
+                if(moveTo != row){
+                    boolean merged = board.move(col, moveTo, tile);
+                    
+                    if(merged){
+                        score += board.tile(col, moveTo).value();
+                        mergedRow[moveTo] = true;
+                    }
+                    changed = true;                    
+                }
+
+            }
+        }
+        board.setViewingPerspective(Side.NORTH);
         checkGameOver();
         if (changed) {
             setChanged();
@@ -184,12 +219,12 @@ public class Model extends Observable {
                 // 只需检查right和down
                 if(i+1 < l){
                     Tile right = b.tile(i+1, j);
-                    if(t.value() == right.value()) return true;
+                    if(right != null && t.value() == right.value()) return true;
                 }
 
                 if(j+1 < l){
                     Tile down = b.tile(i, j+1);
-                    if(t.value() == down.value()) return true;
+                    if(down != null && t.value() == down.value()) return true;
                 }
 
             }
