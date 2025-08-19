@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StopwatchDemo",
+            "request": "launch",
+            "mainClass": "timingtest.StopwatchDemo",
+            "projectName": "CS61B_6e22b685"
+        },
+        {
+            "type": "java",
+            "name": "TimeAList",
+            "request": "launch",
+            "mainClass": "timingtest.TimeAList",
+            "projectName": "CS61B_6e22b685"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
