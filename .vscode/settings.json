@@ -1,0 +1,15 @@
+{
+    "java.project.sourcePaths": [
+        "lab1",
+        "lab2",
+        "lab3",
+        "proj0"
+    ],
+    "java.project.referencedLibraries": [
+        "c:\\Users\\hui\\CS61B\\lib\\algs4.jar",
+        "c:\\Users\\hui\\CS61B\\lib\\hamcrest-core-1.3.jar",
+        "c:\\Users\\hui\\CS61B\\lib\\junit-4.12.jar",
+        "c:\\Users\\hui\\CS61B\\lib\\ucb.jar"
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
+}

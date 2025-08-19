@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TimeSLList",
+            "request": "launch",
+            "mainClass": "timingtest.TimeSLList",
+            "projectName": "CS61B_6e22b685"
+        },
+        {
+            "type": "java",
             "name": "StopwatchDemo",
             "request": "launch",
             "mainClass": "timingtest.StopwatchDemo",
