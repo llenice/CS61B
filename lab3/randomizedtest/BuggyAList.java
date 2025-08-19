@@ -63,7 +63,7 @@ public class BuggyAList<Item> {
         items[size - 1] = null;
         size = size - 1;
 
-        if ((size < items.length / 4) && (size > 4)) {
+        if ((size < items.length / 4) && (size > 0)) {
             int new_size = size / 2;
             if (new_size < 1) new_size = 1;
             resize(new_size);
