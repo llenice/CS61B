@@ -3,7 +3,8 @@
         "lab1",
         "lab2",
         "lab3",
-        "proj0"
+        "proj0,
+        "lab4"
     ],
     "java.project.referencedLibraries": [
         "c:\\Users\\hui\\CS61B\\lib\\algs4.jar",
