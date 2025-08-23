@@ -101,5 +101,12 @@
             "mainClass": "hw0",
             "projectName": "CS61B_6e22b685"
         }
+        {
+            "type": "java",
+            "name": "LinkedListDeque",
+            "request": "launch",
+            "mainClass": "LinkedListDeque",
+            "projectName": "CS61B_6e22b685"
+        }
     ]
 }

@@ -40,5 +40,15 @@
             </plugin>
         </plugins>
     </build>
-    
+
+    <dependencies>
+        <!-- 添加 JUnit 依赖 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>   
+     
 </project>

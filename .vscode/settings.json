@@ -3,14 +3,15 @@
         "lab1",
         "lab2",
         "lab3",
-        "proj0,
-        "lab4"
+        "proj0",
+        "lab4",
+        "proj1"
     ],
     "java.project.referencedLibraries": [
-        "c:\\Users\\hui\\CS61B\\lib\\algs4.jar",
-        "c:\\Users\\hui\\CS61B\\lib\\hamcrest-core-1.3.jar",
-        "c:\\Users\\hui\\CS61B\\lib\\junit-4.12.jar",
-        "c:\\Users\\hui\\CS61B\\lib\\ucb.jar"
+        "D:\\CS61B\\libalgs4.jar",
+        "D:\\CS61B\\libhamcrest-core-1.3.jar",
+        "D:\\CS61B\\libjunit-4.12.jar",
+        "D:\\CS61B\\libucb.jar"
     ],
     "java.configuration.updateBuildConfiguration": "interactive"
 }

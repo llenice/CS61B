@@ -131,6 +131,10 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T>{
         return true;
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return new LinkedListIterator();
+    }
 
     private class LinkedListIterator implements Iterator<T> {
         private Node node;
@@ -151,19 +155,19 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T>{
 
     }
     
-    // public static void main(String[] args) {
-    //     LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
-	// 	// should be empty
+    public static void main(String[] args) {
+        LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
+		// should be empty
 
-	// 	System.out.println(lld1.isEmpty());
+		System.out.println(lld1.isEmpty());
 
-	// 	lld1.addFirst(10);
-	// 	// should not be empty
-    //     lld1.printDeque();
-	// 	System.out.println(lld1.isEmpty());
+		lld1.addFirst(10);
+		// should not be empty
+        lld1.printDeque();
+		System.out.println(lld1.isEmpty());
 
-	// 	lld1.removeFirst();
-	// 	lld1.printDeque();
-	// 	System.out.println(lld1.isEmpty());
-    // }
+		lld1.removeFirst();
+		lld1.printDeque();
+		System.out.println(lld1.isEmpty());
+    }
 }
