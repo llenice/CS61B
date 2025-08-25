@@ -1,6 +1,5 @@
 package deque;
 
-import java.util.Deque;
 import java.util.Iterator;
 
 public class LinkedListDeque<T> implements Deque<T>, Iterable<T>{
@@ -170,3 +169,4 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T>{
 		System.out.println(lld1.isEmpty());
     }
 }
+
