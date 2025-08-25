@@ -1,7 +1,6 @@
 package deque;
 
 import java.util.Deque;
-import java.util.LinkedList;
 import java.util.Iterator;
 
 public class LinkedListDeque<T> implements Deque<T>, Iterable<T>{
@@ -99,11 +98,11 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T>{
         return l.getRecursive(index - 1);
     }
 
-    @Override
-    public boolean isEmpty(){
-        return sentinel.next == sentinel;
-        // return size==0;
-    }
+    // @Override
+    // public boolean isEmpty(){
+    //     return sentinel.next == sentinel;
+    //     // return size==0;
+    // }
 
     public void printDeque(){
         Node p = sentinel.next;

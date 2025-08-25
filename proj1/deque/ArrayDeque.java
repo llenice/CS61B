@@ -26,10 +26,10 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
         return (index + 1) % items.length;
     }
 
-    @Override
-    public boolean isEmpty(){
-        return size == 0;
-    }
+    // @Override
+    // public boolean isEmpty(){
+    //     return size == 0;
+    // }
     
     @Override
     public int size(){
