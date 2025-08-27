@@ -13,5 +13,5 @@
         "D:\\CS61B\\libjunit-4.12.jar",
         "D:\\CS61B\\libucb.jar"
     ],
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "automatic"
 }
