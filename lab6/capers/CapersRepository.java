@@ -2,6 +2,7 @@ package capers;
 
 import java.io.File;
 import static capers.Utils.*;
+import java.io.IOException;
 
 /** A repository for Capers 
  * @author hjh
@@ -22,6 +23,8 @@ public class CapersRepository {
     static final File CAPERS_FOLDER = join(CWD, ".capers"); // TODO Hint: look at the `join`
                                             //      function in Utils
 
+    static final File story = new File(".capers/story");
+
     /**
      * Does required filesystem operations to allow for persistence.
      * (creates any necessary folders or files)
@@ -36,9 +39,11 @@ public class CapersRepository {
             CAPERS_FOLDER.mkdir();
         }
         Dog.DOG_FOLDER.mkdir();
-        File story = join(CAPERS_FOLDER, "story");
-        if(!story.exists()){
-            writeContents(story, "");
+        
+        try {
+            story.createNewFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -48,7 +53,10 @@ public class CapersRepository {
      * @param text String of the text to be appended to the story
      */
     public static void writeStory(String text) {
-        // TODO
+        String previous = readContentsAsString(story);
+        previous = previous + text + "\n";
+        writeContents(story, previous);
+        System.out.println(previous);
     }
 
     /**
@@ -57,7 +65,9 @@ public class CapersRepository {
      * Also prints out the dog's information using toString().
      */
     public static void makeDog(String name, String breed, int age) {
-        // TODO
+        Dog newDog = new Dog(name, breed, age);
+        newDog.saveDog();
+        System.out.println(newDog);
     }
 
     /**
@@ -67,6 +77,8 @@ public class CapersRepository {
      * @param name String name of the Dog whose birthday we're celebrating.
      */
     public static void celebrateBirthday(String name) {
-        // TODO
+        Dog birthdayDog = Dog.fromFile(name);
+        birthdayDog.haveBirthday();
+        birthdayDog.saveDog();
     }
 }
